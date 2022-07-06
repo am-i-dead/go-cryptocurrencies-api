@@ -3,6 +3,7 @@
 This simple API let you get prices of cryptocurrencies from coinmarketcap.com
 
 `GET /prices` will return the list of cryptocurrencies and their prices
+
 `GET /prices/id` will return the price of cryptocurrency by id 
 
 The list of cryptocurrencies and their id's:
