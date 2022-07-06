@@ -15,7 +15,7 @@ func generateUrl(d string, cryptoName string) string {
 	return "https://" + d + "/currencies/" + cryptoName + "/"
 }
 
-func parse() {
+func parse(cryptoName string, id int) {
 	c := colly.NewCollector(
 		colly.AllowedDomains(domain),
 	)
@@ -29,10 +29,10 @@ func parse() {
 			log.Fatal(err)
 		}
 		newPrice = math.Round(newPrice*100) / 100
-		Prices[0].Price = newPrice
+		Prices[id].Price = newPrice
 	})
 
-	url := generateUrl(domain, Prices[0].Name)
+	url := generateUrl(domain, cryptoName)
 
 	c.Visit(url)
 }
